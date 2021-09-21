@@ -129,8 +129,8 @@ class Disk(Entry):
             columns = df_entry.split(maxsplit=5)
             df_output_dict[columns[5]] = {  # 6th column === mount point.
                 'device_path': columns[0],
-                'used_blocks': int(columns[2]),
-                'total_blocks': int(columns[1])
+                'used_blocks': int(float(columns[2])),
+                'total_blocks': int(float(columns[1]))
             }
 
         return df_output_dict
